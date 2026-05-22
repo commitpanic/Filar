@@ -973,6 +973,7 @@ section.alt { background: var(--color-bg-alt); }
   :root { --section-pad: 3.5rem 0; }
 
   #hero { padding-bottom: 5rem; }
+  .hero-inner { padding-bottom: 25px; }
 
   .hamburger { display: flex; }
 
