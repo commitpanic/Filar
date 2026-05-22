@@ -972,6 +972,8 @@ section.alt { background: var(--color-bg-alt); }
 @media (max-width: 768px) {
   :root { --section-pad: 3.5rem 0; }
 
+  #hero { padding-bottom: 5rem; }
+
   .hamburger { display: flex; }
 
   .nav-links {
