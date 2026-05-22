@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Filar</title>
+  <meta name="description" content="Wybrane realizacje Filar — projekty doradcze, transformacje i sukcesy naszych klientów.">
+  <meta property="og:title" content="Portfolio — Filar">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .portfolio-filters {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: .45rem 1.1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--color-text-light);
+      transition: all var(--transition);
+      cursor: pointer;
+      background: var(--color-white);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-white);
+    }
+    .portfolio-grid-full {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) { .portfolio-grid-full { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px) { .portfolio-grid-full { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body data-page="portfolio">
+
+  <div id="header-placeholder"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Portfolio</h1>
+      <p>Wybrane projekty i sukcesy naszych klientów.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Strona główna</a>
+        <span>›</span>
+        <span>Portfolio</span>
+      </nav>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="portfolio-filters reveal">
+        <button class="filter-btn active" data-filter="all">Wszystkie</button>
+        <button class="filter-btn" data-filter="strategia">Strategia</button>
+        <button class="filter-btn" data-filter="it">IT / Technologie</button>
+        <button class="filter-btn" data-filter="finanse">Finanse</button>
+        <button class="filter-btn" data-filter="operacje">Operacje</button>
+      </div>
+
+      <div class="portfolio-grid-full" id="portfolioGrid">
+        <div class="portfolio-card reveal" data-delay="0" data-category="operacje">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-1.jpg" alt="Projekt Clarity" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Optymalizacja operacyjna</div>
+            <h3>Projekt Clarity</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Redukcja kosztów operacyjnych o 18% dla firmy produkcyjnej z branży FMCG.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-delay="100" data-category="strategia">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-2.jpg" alt="Projekt Elevate" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Ekspansja rynkowa</div>
+            <h3>Projekt Elevate</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Strategia wejścia na rynki CEE dla polskiego producenta oprogramowania.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-delay="200" data-category="it">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-3.jpg" alt="Projekt Venture" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Transformacja cyfrowa</div>
+            <h3>Projekt Venture</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Migracja do chmury i wdrożenie ERP dla sieci handlowej (200+ sklepów).</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-delay="0" data-category="finanse">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-4.jpg" alt="Projekt Shield" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Doradztwo finansowe</div>
+            <h3>Projekt Shield</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Restrukturyzacja finansowa i pozyskanie finansowania dla spółki technologicznej.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-delay="100" data-category="strategia">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-5.jpg" alt="Projekt Apex" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Strategia marki</div>
+            <h3>Projekt Apex</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Rebrand i repozycjonowanie marki dla lidera rynku usług logistycznych.</p>
+          </div>
+        </div>
+        <div class="portfolio-card reveal" data-delay="200" data-category="operacje">
+          <div class="portfolio-img">
+            <img src="assets/images/portfolio-6.jpg" alt="Projekt Flow" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div class="tag">Lean Management</div>
+            <h3>Projekt Flow</h3>
+            <p style="font-size:.85rem; color:var(--color-text-light); margin-top:.4rem;">Wdrożenie Lean w fabryce — wzrost wydajności linii produkcyjnej o 31%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="alt">
+    <div class="container">
+      <div class="stats-row reveal">
+        <div class="stat-item">
+          <div class="stat-number" data-count="550" data-suffix="+">0+</div>
+          <div class="stat-label">Projektów</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="1000" data-suffix="+">0+</div>
+          <div class="stat-label">Klientów</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+          <div class="stat-label">Krajów</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="98">0</div>
+          <div class="stat-label">% zadowolonych klientów</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container">
+      <h2 class="reveal">Chcesz być naszym kolejnym sukcesem?</h2>
+      <p class="reveal">Porozmawiajmy o Twoich celach i jak możemy Ci pomóc je osiągnąć.</p>
+      <div class="cta-actions reveal">
+        <a href="contact.html" class="btn btn-primary">Umów konsultację</a>
+        <a href="services.html" class="btn btn-outline">Nasze usługi</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#portfolioGrid .portfolio-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

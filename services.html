@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usługi — Filar</title>
+  <meta name="description" content="Pełna oferta usług doradczych Filar: strategia, IT, finanse, marketing, compliance i optymalizacja operacyjna.">
+  <meta property="og:title" content="Usługi — Filar">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail.reverse { direction: rtl; }
+    .service-detail.reverse > * { direction: ltr; }
+    .service-detail-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--color-bg-alt);
+    }
+    .service-detail-img img { width: 100%; height: 100%; object-fit: cover; }
+    .service-detail-content .service-num {
+      font-size: .8rem; font-weight: 800;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      margin-bottom: .5rem;
+    }
+    .service-detail-content h2 { margin-bottom: 1rem; }
+    .service-detail-content p { color: var(--color-text-light); margin-bottom: 1rem; }
+    .service-bullets { display: flex; flex-direction: column; gap: .5rem; margin: 1.25rem 0 1.75rem; }
+    .service-bullets li {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .9rem;
+    }
+    .service-bullets li::before {
+      content: '→'; color: var(--color-accent); font-weight: 700; flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .service-detail, .service-detail.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body data-page="services">
+
+  <div id="header-placeholder"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Nasze usługi</h1>
+      <p>Kompleksowe doradztwo biznesowe dopasowane do Twoich potrzeb.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Strona główna</a>
+        <span>›</span>
+        <span>Usługi</span>
+      </nav>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+
+      <!-- 01 Strategia -->
+      <div class="service-detail">
+        <div class="service-detail-img reveal-left">
+          <img src="assets/images/service-strategy.jpg" alt="Doradztwo strategiczne" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-right">
+          <div class="service-num">01</div>
+          <h2>Doradztwo strategiczne</h2>
+          <p>Opracowujemy długoterminowe strategie wzrostu i dostosowujemy je do zmieniających się warunków rynkowych. Analizujemy otoczenie konkurencyjne, identyfikujemy szanse i zagrożenia.</p>
+          <ul class="service-bullets">
+            <li>Analiza SWOT i ocena pozycji rynkowej</li>
+            <li>Planowanie strategiczne (1–5 lat)</li>
+            <li>Mapowanie ścieżek wzrostu</li>
+            <li>Strategie wejścia na nowe rynki</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+      <!-- 02 IT -->
+      <div class="service-detail reverse">
+        <div class="service-detail-img reveal-right">
+          <img src="assets/images/service-it.jpg" alt="Doradztwo IT" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-left">
+          <div class="service-num">02</div>
+          <h2>Doradztwo IT / Technologie</h2>
+          <p>Wspieramy firmy w cyfrowej transformacji — od audytu infrastruktury IT po wdrożenie nowych systemów i automatyzację procesów biznesowych.</p>
+          <ul class="service-bullets">
+            <li>Audyt infrastruktury i bezpieczeństwa IT</li>
+            <li>Dobór i wdrożenie systemów ERP/CRM</li>
+            <li>Automatyzacja procesów (RPA)</li>
+            <li>Strategia chmurowa (Cloud)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+      <!-- 03 Finanse -->
+      <div class="service-detail">
+        <div class="service-detail-img reveal-left">
+          <img src="assets/images/service-finance.jpg" alt="Doradztwo finansowe" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-right">
+          <div class="service-num">03</div>
+          <h2>Doradztwo finansowe</h2>
+          <p>Pomagamy zarządzać finansami firmy efektywnie — od analizy kondycji finansowej po pozyskiwanie kapitału i optymalizację kosztów.</p>
+          <ul class="service-bullets">
+            <li>Analiza wskaźnikowa i due diligence</li>
+            <li>Optymalizacja struktury kosztów</li>
+            <li>Planowanie i kontrola budżetu</li>
+            <li>Wsparcie w pozyskaniu finansowania</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+      <!-- 04 Marketing -->
+      <div class="service-detail reverse">
+        <div class="service-detail-img reveal-right">
+          <img src="assets/images/service-marketing.jpg" alt="Doradztwo marketingowe" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-left">
+          <div class="service-num">04</div>
+          <h2>Doradztwo marketingowe</h2>
+          <p>Budujemy silne marki i skuteczne strategie marketingowe, które generują leady i zwiększają sprzedaż.</p>
+          <ul class="service-bullets">
+            <li>Strategia marki i pozycjonowanie</li>
+            <li>Analiza grupy docelowej i person</li>
+            <li>Strategia content i digital marketing</li>
+            <li>Optymalizacja lejka sprzedażowego</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+      <!-- 05 Compliance -->
+      <div class="service-detail">
+        <div class="service-detail-img reveal-left">
+          <img src="assets/images/service-compliance.jpg" alt="Compliance" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-right">
+          <div class="service-num">05</div>
+          <h2>Zgodność i compliance</h2>
+          <p>Dbamy o to, aby Twoja firma działała zgodnie z obowiązującym prawem i regulacjami branżowymi — bez zbędnego ryzyka.</p>
+          <ul class="service-bullets">
+            <li>Audyty zgodności z RODO / GDPR</li>
+            <li>Wdrożenie systemów zarządzania ISO</li>
+            <li>Procedury AML i KYC</li>
+            <li>Szkolenia z compliance</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+      <!-- 06 Operacje -->
+      <div class="service-detail reverse">
+        <div class="service-detail-img reveal-right">
+          <img src="assets/images/service-operations.jpg" alt="Optymalizacja operacyjna" loading="lazy">
+        </div>
+        <div class="service-detail-content reveal-left">
+          <div class="service-num">06</div>
+          <h2>Optymalizacja operacyjna</h2>
+          <p>Analizujemy i usprawniamy procesy biznesowe, eliminując marnotrawstwo i zwiększając efektywność całej organizacji.</p>
+          <ul class="service-bullets">
+            <li>Mapowanie i redesign procesów (BPM)</li>
+            <li>Lean Management i Six Sigma</li>
+            <li>Optymalizacja łańcucha dostaw</li>
+            <li>Wdrożenie KPI i dashboardów</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Zapytaj o usługę</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container">
+      <h2 class="reveal">Nie wiesz, od czego zacząć?</h2>
+      <p class="reveal">Umów bezpłatną konsultację — wspólnie dobierzemy usługi odpowiednie dla Twojej firmy.</p>
+      <div class="cta-actions reveal">
+        <a href="contact.html" class="btn btn-primary">Umów konsultację</a>
+        <a href="portfolio.html" class="btn btn-outline">Zobacz nasze realizacje</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

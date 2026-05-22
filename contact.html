@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Filar</title>
+  <meta name="description" content="Skontaktuj się z Filar — umów konsultację lub zadaj pytanie. Odpowiemy w ciągu 24 godzin.">
+  <meta property="og:title" content="Kontakt — Filar">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+
+  <div id="header-placeholder"></div>
+
+  <div class="page-hero">
+    <div class="container">
+      <h1>Kontakt</h1>
+      <p>Skontaktuj się z nami — odpowiemy w ciągu 24 godzin.</p>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Strona główna</a>
+        <span>›</span>
+        <span>Kontakt</span>
+      </nav>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact info -->
+        <div class="contact-info reveal-left">
+          <h3>Dane kontaktowe</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Adres</strong>
+              ul. Przykładowa 1<br>00-000 Warszawa
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:+48000000000">+48 000 000 000</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:biuro@filar.pl">biuro@filar.pl</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <strong>Godziny pracy</strong>
+              Pon–Pt: 8:00–18:00
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div style="margin-top:2rem; border-radius:var(--radius-md); overflow:hidden; height:220px; background:var(--color-bg-alt); display:flex; align-items:center; justify-content:center; color:var(--color-text-light); font-size:.9rem; border:1px solid var(--color-border);">
+            <!-- Replace with real Google Maps embed iframe -->
+            <span>Mapa (wstaw iframe Google Maps)</span>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <h3>Napisz do nas</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Imię i nazwisko *</label>
+                <input type="text" id="name" name="name" placeholder="Jan Kowalski" autocomplete="name" required>
+                <span class="error-msg" data-error="name">Podaj imię i nazwisko (min. 2 znaki).</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Adres e-mail *</label>
+                <input type="email" id="email" name="email" placeholder="jan@firma.pl" autocomplete="email" required>
+                <span class="error-msg" data-error="email">Podaj poprawny adres e-mail.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Temat *</label>
+              <input type="text" id="subject" name="subject" placeholder="Czego dotyczy Twoje zapytanie?" required>
+              <span class="error-msg" data-error="subject">Podaj temat wiadomości.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Interesuje mnie</label>
+              <select id="service" name="service">
+                <option value="">— wybierz usługę —</option>
+                <option value="strategia">Doradztwo strategiczne</option>
+                <option value="it">Doradztwo IT / Technologie</option>
+                <option value="finanse">Doradztwo finansowe</option>
+                <option value="marketing">Doradztwo marketingowe</option>
+                <option value="compliance">Zgodność i compliance</option>
+                <option value="operacje">Optymalizacja operacyjna</option>
+                <option value="inne">Inne</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Wiadomość *</label>
+              <textarea id="message" name="message" placeholder="Opisz czego potrzebujesz i jak możemy pomóc…" required></textarea>
+              <span class="error-msg" data-error="message">Wiadomość musi mieć co najmniej 10 znaków.</span>
+            </div>
+
+            <div class="form-group" style="display:flex; align-items:flex-start; gap:.6rem;">
+              <input type="checkbox" id="rodo" name="rodo" style="width:auto; margin-top:.2rem;" required>
+              <label for="rodo" style="font-size:.85rem; font-weight:400; color:var(--color-text-light);">
+                Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie, zgodnie z <a href="#" style="color:var(--color-primary); text-decoration:underline;">Polityką Prywatności</a>. *
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1rem;">
+              Wyślij wiadomość
+            </button>
+
+            <div class="form-status" id="formStatus" role="alert"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- EmailJS SDK — replace YOUR_PUBLIC_KEY with your actual key from emailjs.com -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
+  </script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // RODO checkbox validation
+    const form = document.getElementById('contactForm');
+    const rodoBox = document.getElementById('rodo');
+    if (form && rodoBox) {
+      form.addEventListener('submit', function(e) {
+        if (!rodoBox.checked) {
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          rodoBox.style.outline = '2px solid #e53e3e';
+        } else {
+          rodoBox.style.outline = '';
+        }
+      }, true); // capture phase — runs before main.js handler
+    }
+  </script>
+</body>
+</html>
