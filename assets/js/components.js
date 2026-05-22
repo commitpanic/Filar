@@ -15,8 +15,6 @@
           <li><a href="index.html"     data-page="home">Strona główna</a></li>
           <li><a href="about.html"     data-page="about">O nas</a></li>
           <li><a href="services.html"  data-page="services">Usługi</a></li>
-          <li><a href="portfolio.html" data-page="portfolio">Portfolio</a></li>
-          <li><a href="team.html"      data-page="team">Zespół</a></li>
           <li><a href="contact.html"   data-page="contact" class="nav-cta">Kontakt</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -33,7 +31,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">Filar</div>
-          <p>Profesjonalne doradztwo biznesowe. Pomagamy firmom rosnąć, zarządzać ryzykiem i osiągać wyznaczone cele.</p>
+          <p>Eksperci kredytowi i doradcy finansowi z regionu Lubuskiego. Pomagamy osobom prywatnym i firmom w wyborze najlepszych kredytów i ubezpieczeń.</p>
         </div>
         <div class="footer-col">
           <h4>Strony</h4>
@@ -41,24 +39,21 @@
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="about.html">O nas</a></li>
             <li><a href="services.html">Usługi</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Informacje</h4>
           <ul>
-            <li><a href="team.html">Zespół</a></li>
             <li><a href="contact.html">Kontakt</a></li>
-            <li><a href="#">Polityka prywatności</a></li>
-            <li><a href="#">Regulamin</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Kontakt</h4>
           <ul>
-            <li><a href="mailto:biuro@filar.pl">biuro@filar.pl</a></li>
-            <li><a href="tel:+48000000000">+48 000 000 000</a></li>
-            <li>ul. Przykładowa 1<br>00-000 Warszawa</li>
+            <li><a href="mailto:alicja.sienkiewicz@angfinanse.pl">alicja.sienkiewicz@angfinanse.pl</a></li>
+            <li><a href="tel:+48665744561">+48 665 744 561</a></li>
+            <li>ul. Józefa Piłsudskiego 13/1<br>66-200 Świebodzin</li>
           </ul>
         </div>
       </div>
