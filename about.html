@@ -10,6 +10,26 @@
     <meta property="og:title" content="O nas — Filar">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .specialist-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .specialist-grid.reverse { direction: rtl; }
+    .specialist-grid.reverse > * { direction: ltr; }
+    .specialist-grid:last-child { border-bottom: none; }
+    .specialist-photo { border-radius: 1rem; overflow: hidden; aspect-ratio: 3/4; }
+    .specialist-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    @media (max-width: 768px) {
+      .specialist-grid { grid-template-columns: 1fr; }
+      .specialist-grid.reverse { direction: ltr; }
+      .specialist-photo { max-width: 260px; }
+    }
+  </style>
 </head>
 <body data-page="about">
 
@@ -56,11 +76,11 @@
       </div>
 
       <!-- Alicja -->
-      <div class="service-detail" style="padding:3rem 0;">
-        <div class="service-detail-img reveal-left">
+      <div class="specialist-grid" style="padding:3rem 0;">
+        <div class="specialist-photo reveal-left">
           <img src="assets/images/DSC05232.jpg" alt="Alicja Sienkiewicz" loading="lazy">
         </div>
-        <div class="service-detail-content reveal-right">
+        <div class="specialist-content reveal-right">
           <div class="service-num">01</div>
           <h2>Alicja Sienkiewicz</h2>
           <p style="color:var(--color-accent); font-weight:600; margin-bottom:1rem;">Ekspert Finansowy</p>
@@ -75,11 +95,11 @@
       </div>
 
       <!-- Malwina -->
-      <div class="service-detail reverse" style="padding:3rem 0; border-top:1px solid var(--color-border);">
-        <div class="service-detail-img reveal-right">
+      <div class="specialist-grid reverse" style="padding:3rem 0; border-top:none;">
+        <div class="specialist-photo reveal-right">
           <img src="assets/images/DSC05362.jpg" alt="Malwina Migacz" loading="lazy">
         </div>
-        <div class="service-detail-content reveal-left">
+        <div class="specialist-content reveal-left">
           <div class="service-num">02</div>
           <h2>Malwina Migacz</h2>
           <p style="color:var(--color-accent); font-weight:600; margin-bottom:1rem;">Ekspert Finansowy</p>
