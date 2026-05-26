@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   deploy:
@@ -23,6 +23,7 @@ jobs:
           sed -i "s|YOUR_PLACE_ID|${{ secrets.GOOGLE_PLACE_ID }}|g" index.html
 
       - name: Deploy via FTP
+        timeout-minutes: 10
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:   ${{ secrets.FTP_SERVER }}
