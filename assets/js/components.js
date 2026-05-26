@@ -61,7 +61,7 @@
       </div>
       <div class="footer-bottom">
         <p>© <span id="footerYear"></span> Filar. Wszelkie prawa zastrzeżone.</p>
-        <p>Projekt &amp; wdrożenie: Filar</p>
+        <p>Created by <a href="https://kubabuba.pl" target="_blank" rel="noopener noreferrer">kubabuba.pl</a></p>
       </div>
     </div>
   </footer>`;
