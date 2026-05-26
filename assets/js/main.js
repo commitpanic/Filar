@@ -265,13 +265,19 @@ window.initGoogleReviews = function () {
   const placeId = section.dataset.placeId;
   if (!placeId || placeId === 'YOUR_PLACE_ID') return;
 
-  const dummy   = document.createElement('div');
+  const dummy = document.createElement('div');
+  dummy.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;';
+  document.body.appendChild(dummy);
   const service = new google.maps.places.PlacesService(dummy);
 
   service.getDetails(
     { placeId, fields: ['reviews', 'rating', 'user_ratings_total', 'url'] },
     function (place, status) {
-      if (status !== google.maps.places.PlacesServiceStatus.OK) return;
+      document.body.removeChild(dummy);
+      if (status !== google.maps.places.PlacesServiceStatus.OK) {
+        console.warn('[Google Reviews] status:', status, '| placeId:', placeId);
+        return;
+      }
       const reviews = (place.reviews || []).filter(r => r.rating >= 4);
       if (!reviews.length) return;
 
