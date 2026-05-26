@@ -122,4 +122,136 @@
       }
     });
   }
+  /* ── Accessibility toolbar (desktop only) ───────────────── */
+  const a11yCSS = `
+    #a11y-bar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: #1e293b;
+      border-radius: 8px 0 0 8px;
+      padding: 6px 4px;
+      box-shadow: -2px 0 12px rgba(0,0,0,.25);
+    }
+    #a11y-bar button {
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: #e2e8f0;
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s;
+      line-height: 1;
+      padding: 0;
+    }
+    #a11y-bar button:hover { background: rgba(255,255,255,.15); }
+    #a11y-bar button.a11y-active { background: var(--color-accent, #c9a84c); color: #000; }
+    #a11y-bar .a11y-sep { height: 1px; background: rgba(255,255,255,.15); margin: 2px 4px; }
+    @media (max-width: 768px) { #a11y-bar { display: none !important; } }
+
+    /* High contrast mode */
+    body.hc-mode {
+      --color-primary: #fff !important;
+      --color-text: #fff !important;
+      --color-text-light: #d1d5db !important;
+      --color-accent: #ffe066 !important;
+      background: #000 !important;
+      color: #fff !important;
+    }
+    body.hc-mode #navbar,
+    body.hc-mode footer { background: #111 !important; border-color: #444 !important; }
+    body.hc-mode .card,
+    body.hc-mode .service-card,
+    body.hc-mode .testimonial-card,
+    body.hc-mode .calc-panel-inner,
+    body.hc-mode .calc-info-card,
+    body.hc-mode .contact-info,
+    body.hc-mode .contact-form { background: #111 !important; border-color: #555 !important; color: #fff !important; }
+    body.hc-mode .container { background: #000 !important; }
+    body.hc-mode a { color: #ffe066 !important; }
+    body.hc-mode .btn-primary { background: #ffe066 !important; color: #000 !important; border-color: #ffe066 !important; }
+    body.hc-mode .nav-cta { background: #ffe066 !important; color: #000 !important; border-color: #ffe066 !important; }
+    body.hc-mode input,
+    body.hc-mode textarea,
+    body.hc-mode select { background: #1a1a1a !important; color: #fff !important; border-color: #666 !important; }
+    body.hc-mode .page-hero { background: #000 !important; }
+    body.hc-mode .alt { background: #000 !important; }
+    body.hc-mode #hero { background: #000 !important; }
+    body.hc-mode .hero-cities { background: #000 !important; border-color: #444 !important; }
+    body.hc-mode #cta { background: #000 !important; }
+    body.hc-mode #about-preview,
+    body.hc-mode #team-preview,
+    body.hc-mode #calculators-preview { background: #000 !important; }
+    body.hc-mode .team-card { background: #111 !important; border-color: #555 !important; color: #fff !important; }
+    body.hc-mode .stat-number { color: #ffe066 !important; }
+    body.hc-mode .stat-label { color: #d1d5db !important; }
+    body.hc-mode .stat-item { border-color: #444 !important; }
+    body.hc-mode .btn-outline-dark { background: #000 !important; color: #fff !important; border-color: #fff !important; }
+    body.hc-mode .btn-outline { background: #000 !important; color: #fff !important; border-color: #fff !important; }
+    body.hc-mode .calc-tab { background: #111 !important; color: #fff !important; border-color: #555 !important; }
+    body.hc-mode .calc-tab.active { background: #ffe066 !important; color: #000 !important; border-color: #ffe066 !important; }
+    body.hc-mode .about-feature { background: #111 !important; color: #fff !important; border-color: #555 !important; }
+  `;
+
+  const styleEl = document.createElement('style');
+  styleEl.textContent = a11yCSS;
+  document.head.appendChild(styleEl);
+
+  const a11yBar = document.createElement('div');
+  a11yBar.id = 'a11y-bar';
+  a11yBar.setAttribute('role', 'toolbar');
+  a11yBar.setAttribute('aria-label', 'Narzędzia dostępności');
+  a11yBar.innerHTML = `
+    <button id="a11y-increase" title="Powiększ tekst" aria-label="Powiększ tekst">A+</button>
+    <button id="a11y-decrease" title="Pomniejsz tekst" aria-label="Pomniejsz tekst">A−</button>
+    <button id="a11y-reset"    title="Resetuj rozmiar tekstu" aria-label="Resetuj rozmiar tekstu" style="font-size:.65rem;">A↺</button>
+    <div class="a11y-sep"></div>
+    <button id="a11y-contrast" title="Wysoki kontrast" aria-label="Włącz/wyłącz wysoki kontrast" style="font-size:.7rem;">WK</button>
+  `;
+  document.body.appendChild(a11yBar);
+
+  // Restore saved prefs
+  const savedSize = parseInt(localStorage.getItem('a11y-size') || '0', 10);
+  const savedHC   = localStorage.getItem('a11y-hc') === '1';
+  let currentSize = savedSize;
+  if (currentSize !== 0) document.documentElement.style.fontSize = (100 + currentSize * 10) + '%';
+  if (savedHC) {
+    document.body.classList.add('hc-mode');
+    document.getElementById('a11y-contrast').classList.add('a11y-active');
+  }
+
+  document.getElementById('a11y-increase').addEventListener('click', () => {
+    if (currentSize >= 3) return;
+    currentSize++;
+    document.documentElement.style.fontSize = (100 + currentSize * 10) + '%';
+    localStorage.setItem('a11y-size', currentSize);
+  });
+  document.getElementById('a11y-decrease').addEventListener('click', () => {
+    if (currentSize <= -1) return;
+    currentSize--;
+    document.documentElement.style.fontSize = (100 + currentSize * 10) + '%';
+    localStorage.setItem('a11y-size', currentSize);
+  });
+  document.getElementById('a11y-reset').addEventListener('click', () => {
+    currentSize = 0;
+    document.documentElement.style.fontSize = '';
+    localStorage.setItem('a11y-size', 0);
+  });
+  document.getElementById('a11y-contrast').addEventListener('click', () => {
+    const isHC = document.body.classList.toggle('hc-mode');
+    document.getElementById('a11y-contrast').classList.toggle('a11y-active', isHC);
+    localStorage.setItem('a11y-hc', isHC ? '1' : '0');
+  });
+
 })();
