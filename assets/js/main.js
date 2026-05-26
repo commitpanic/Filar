@@ -211,11 +211,13 @@ document.addEventListener('DOMContentLoaded', () => {
         from_email: contactForm.email.value.trim(),
         subject:   contactForm.subject.value.trim(),
         message:   contactForm.message.value.trim(),
+        time:     new Date().toLocaleString('pl-PL', { dateStyle: 'short', timeStyle: 'short' }),
+        service: contactForm.service.options[contactForm.service.selectedIndex].text.trim() || 'Nie określono'
       };
 
       try {
         /* Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with real values from emailjs.com */
-        await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', params);
+        await emailjs.send('service_6zweq8p', 'template_flpv5sm', params);
         if (statusEl) {
           statusEl.className  = 'form-status success';
           statusEl.textContent = '✓ Wiadomość wysłana! Odezwiemy się wkrótce.';
