@@ -12,10 +12,11 @@
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">Filar</a>
         <ul class="nav-links" id="navLinks" role="list">
-          <li><a href="index.html"     data-page="home">Strona główna</a></li>
-          <li><a href="about.html"     data-page="about">O nas</a></li>
-          <li><a href="services.html"  data-page="services">Usługi</a></li>
-          <li><a href="contact.html"   data-page="contact" class="nav-cta">Kontakt</a></li>
+          <li><a href="index.html"        data-page="home">Strona główna</a></li>
+          <li><a href="about.html"        data-page="about">O nas</a></li>
+          <li><a href="services.html"     data-page="services">Usługi</a></li>
+          <li><a href="kalkulatory.html"  data-page="kalkulatory">Kalkulatory</a></li>
+          <li><a href="contact.html"      data-page="contact" class="nav-cta">Kontakt</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -39,6 +40,7 @@
             <li><a href="index.html">Strona główna</a></li>
             <li><a href="about.html">O nas</a></li>
             <li><a href="services.html">Usługi</a></li>
+            <li><a href="kalkulatory.html">Kalkulatory</a></li>
           </ul>
         </div>
         <div class="footer-col">
