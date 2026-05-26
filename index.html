@@ -165,66 +165,8 @@
     </div>
   </section>
 
-  <!-- ── FAQ ───────────────────────────────────────────── -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="label">FAQ</span>
-        <h2>Często zadawane pytania</h2>
-        <p>Odpowiedzi na najczęstsze pytania dotyczące naszych usług.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-question">
-            Jak wygląda pierwsza konsultacja?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Pierwsza konsultacja to bezpłatne spotkanie (online lub stacjonarnie), podczas którego poznajemy Twoją firmę i potrzeby. Na tej podstawie przygotowujemy propozycję współpracy dopasowaną do Twojej sytuacji.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question">
-            Ile kosztują wasze usługi?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Ceny zależą od zakresu projektu i czasu trwania współpracy. Oferujemy zarówno stałe pakiety miesięczne, jak i projekty rozliczane godzinowo. Szczegółowe wyceny przygotowujemy indywidualnie.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question">
-            Jak długo trwa typowy projekt?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Czas realizacji zależy od złożoności projektu. Krótkie audyty zajmują 2–4 tygodnie, natomiast kompleksowe projekty transformacyjne mogą trwać od 3 miesięcy do roku. Zawsze ustalamy harmonogram przed rozpoczęciem prac.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question">
-            Czy pracujecie z firmami każdej wielkości?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Tak — wspieramy zarówno małe firmy i startupy, jak i średnie przedsiębiorstwa oraz duże korporacje. Nasze metody i podejście dostosowujemy do specyfiki i możliwości każdego klienta.</p>
-          </div>
-        </div>
-        <div class="faq-item reveal">
-          <button class="faq-question">
-            Czy oferujecie wsparcie po zakończeniu projektu?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Tak, oferujemy opcjonalne wsparcie posprojektowe: monitoring wyników, cykliczne przeglądy i doradztwo ad hoc. Zależy nam na trwałych efektach, nie tylko na jednorazowej usłudze.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── TESTIMONIALS ───────────────────────────────────── -->
-  <section id="testimonials" class="alt">
+  <section id="testimonials" class="alt" data-place-id="YOUR_PLACE_ID">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Opinie</span>
@@ -290,5 +232,9 @@
 
   <script src="assets/js/components.js"></script>
   <script src="assets/js/main.js"></script>
+  <!-- Google Maps Places API — zastąp YOUR_API_KEY i YOUR_PLACE_ID -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initGoogleReviews">
+  </script>
 </body>
 </html>
