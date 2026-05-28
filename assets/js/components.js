@@ -32,7 +32,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">Filar</div>
-          <p>Eksperci kredytowi i doradcy finansowi z regionu Lubuskiego. Pomagamy osobom prywatnym i firmom w wyborze najlepszych kredytów i ubezpieczeń.</p>
+          <p>Eksperci kredytowi i finansowi z regionu Lubuskiego. Pomagamy osobom prywatnym i firmom w wyborze najlepszych kredytów i ubezpieczeń.</p>
         </div>
         <div class="footer-col">
           <h4>Strony</h4>
