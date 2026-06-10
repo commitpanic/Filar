@@ -24,6 +24,34 @@
     .specialist-grid:last-child { border-bottom: none; }
     .specialist-photo { border-radius: 1rem; overflow: hidden; aspect-ratio: 3/4; }
     .specialist-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .about-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .about-top-grid .about-image {
+      max-height: 480px;
+      margin: 0;
+    }
+    .about-top-grid .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-mission-block {
+      border-top: 1px solid var(--color-border);
+      padding-top: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .about-top-grid,
+      .about-mission-block { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .specialist-grid { grid-template-columns: 1fr; }
       .specialist-grid.reverse { direction: ltr; }
@@ -51,16 +79,35 @@
   <!-- Mission -->
   <section>
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image reveal-left">
+      <div class="about-top-grid">
+        <div class="about-content reveal-left">
+          <h2>Finanse dopasowane do&nbsp;Ciebie</h2>
+          <p>Filar to zespół ekspertów finansowych, którzy od ponad 10 lat pomagają klientom podejmować najlepsze decyzje kredytowe i ubezpieczeniowe.</p>
+        </div>
+        <div class="about-image reveal-right">
           <img src="assets/images/o_nas.jpg" alt="Zespół Filar" loading="lazy">
         </div>
-        <div class="about-content reveal-right">
+      </div>
+      <div class="about-mission-block">
+        <div class="about-content reveal-left">
           <span class="label">Nasza misja</span>
-          <h2>Finanse dopasowane do Ciebie</h2>
-          <p>Filar to zespół ekspertów finansowych działających w regionie Lubuskim, którzy od ponad 10 lat pomagają klientom podejmować najlepsze decyzje kredytowe i ubezpieczeniowe.</p>
+          <h3>Towarzyszymy Ci w ważnych momentach</h3>
           <p>Naszą misją jest towarzyszenie klientom w ważnych momentach życia — od zakupu pierwszego mieszkania, przez rozwój firmy, aż po zabezpieczenie przyszłości rodziny. Współpracujemy z wieloma bankami i instytucjami finansowymi, dzięki czemu możemy porównać dostępne opcje i wybrać te najbardziej korzystne.</p>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:.5rem;">Umów konsultację</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:1.25rem;">Umów konsultację</a>
+        </div>
+        <div class="reveal-right" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <div class="stat-card" style="flex:1; min-width:140px; background:var(--color-bg-alt); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+            <strong style="display:block; font-size:2.5rem; color:var(--color-accent); line-height:1;">10+</strong>
+            <span style="font-size:.9rem; color:var(--color-text-muted);">lat doświadczenia</span>
+          </div>
+          <div class="stat-card" style="flex:1; min-width:140px; background:var(--color-bg-alt); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+            <strong style="display:block; font-size:2.5rem; color:var(--color-accent); line-height:1;">100+</strong>
+            <span style="font-size:.9rem; color:var(--color-text-muted);">banków i instytucji</span>
+          </div>
+          <div class="stat-card" style="flex:1; min-width:140px; background:var(--color-bg-alt); border-radius:var(--radius-md); padding:1.5rem; text-align:center;">
+            <strong style="display:block; font-size:2.5rem; color:var(--color-accent); line-height:1;">1000+</strong>
+            <span style="font-size:.9rem; color:var(--color-text-muted);">zadowolonych klientów</span>
+          </div>
         </div>
       </div>
     </div>

@@ -557,7 +557,7 @@ section.alt { background: var(--color-bg-alt); }
 .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 
 .team-photo {
-  aspect-ratio: 1;
+  aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--color-bg-alt);
 }
@@ -997,7 +997,7 @@ section.alt { background: var(--color-bg-alt); }
   #navbar.scrolled .nav-links a { color: rgba(255,255,255,.85); }
 
   #about-preview .about-grid { grid-template-columns: 1fr; }
-  .about-image { max-height: 320px; }
+  .about-image { max-height: 220px; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .testimonials-track { grid-template-columns: 1fr; }
