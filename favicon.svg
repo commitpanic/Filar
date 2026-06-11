@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#1a2e5e"/>
-  <text x="32" y="47" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#ffffff" text-anchor="middle">F</text>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="64" height="64" rx="10" fill="#1a3c5e"/>
+  <text x="32" y="48" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="46" font-weight="800" fill="#ffffff" text-anchor="middle">F</text>
 </svg>
